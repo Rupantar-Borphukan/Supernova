@@ -1,5 +1,5 @@
 main{
-    height: 100vh;
+    /* height: 100vh; */
     margin-top: 60px;
 }
 
@@ -24,12 +24,16 @@ main{
 }
 
 #inpts input{
-
+    width: 40%;
+    padding: 14px;
+    border-radius: 25px;
+    border: 0px;
+    margin: 27px;
 }
 
 .order_tab{
     position: relative;
-    top: -39px;
+    top: -36px;
     left: -16px;
     /* font-size: small; */
     /* list-style: none; */
@@ -47,6 +51,32 @@ main{
     border-radius: 10px 10px 0px 0px;
     padding: 0px 15px;
     background: rgba(11, 206, 161, 0.08);
+    border-bottom: 0px;
+}
+
+.order{
+    width: 140px;
+    margin: 11px 131px;
+    border-radius: 11px;
+    padding: 4px;
+    background: green;
+    border: 0px;
+    margin-bottom: 45px;
+}
+
+.food-info h4{
+    text-align: center;
+}
+
+#meal-img{
+    position: absolute;
+    top: 130px;
+    left: 460;
+    width: 363px;
+}
+
+#place{
+    background: #00804496;
 }
 
     /*

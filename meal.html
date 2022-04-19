@@ -87,8 +87,8 @@
       <main>
           <div class="heading"><h1>Meal</h1></div>
         <div class="food-info">
-            <button class="order_tab" onclick="place_order()">Place</button><button class="order_tab" onclick="track_order()">Track</button>
-            Order Food
+            <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
+            <h4>Order Food</h4>
 
             <form id="inpts" action="/meal.html" method="post">
                 <input type="text" placeholder="Your Name" required>
@@ -97,6 +97,7 @@
                 <input type="text" placeholder="Your note for the mess">
                 <button class="order">Place Order</button>
             </form>
+            <div class="img"><img id="meal-img" src="./static/img/meal-image.png" alt=""></div>
         <!-- </div>
         <div class="w3-bar w3-black">
             <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
@@ -138,6 +139,38 @@
     x[i].style.display = "none";
   }
   document.getElementById(cityName).style.display = "block";
+}
+
+function track_order(){
+  var inpt = document.getElementById('inpts')
+  var btn_track = document.getElementById('track')
+  var btn_place = document.getElementById('place')
+  btn_track.style.background = '#00804496'
+  btn_place.style.background = 'rgba(11, 206, 161, 0.08)'
+  console.log(inpt);
+  inpt.style.height = '281px'
+  inpt.style.margin = '131px 0px'
+  // height: 281px;
+  //   margin: 131px 0px;
+  inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
+                <button class="order">Track Order</button>`
+}
+function place_order(){
+  var inpt = document.getElementById('inpts')
+  var btn_track = document.getElementById('track')
+  var btn_place = document.getElementById('place')
+  btn_place.style.background = '#00804496'
+  btn_track.style.background = 'rgba(11, 206, 161, 0.08)'
+  console.log(inpt);
+  inpt.style.height = 'unset'
+  inpt.style.margin = '0px'
+  // height: 281px;
+  //   margin: 131px 0px;
+  inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
+                <input type="number" placeholder="Your Scholar-Id" required>
+                <input type="text" placeholder="Your Food" required>
+                <input type="text" placeholder="Your note for the mess">
+                <button class="order">Place Order</button>`
 }
     </script>
   </body>
