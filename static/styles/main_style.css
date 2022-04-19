@@ -32,8 +32,8 @@ header{
     display: flex;
     flex-direction: row;
     height: 100vh;
-    margin: 46px;
-    margin-top: 65px;
+    margin: 128px;
+    margin-top: 105px;
     margin-bottom: 0px;
 }
 
@@ -118,4 +118,21 @@ background: #00ffff85;
 border-radius: 14px 0px 0px;
 color: #040404;
 padding: 2px 6px;
+}
+
+.nav ul li{
+    list-style: none;
+    padding: 15px;
+    margin: 12px 0px;
+    font-size: large;
+}
+
+.nav ul{
+    display: flex;
+    position: absolute;
+    right: 37px;
+}
+
+.nav a{
+    text-decoration: none;
 }
