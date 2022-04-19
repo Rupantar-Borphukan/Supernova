@@ -1,0 +1,47 @@
+main{
+    height: 100vh;
+    margin-top: 60px;
+}
+
+.food-info{
+    list-style: none;
+    background: #008044e6;
+    margin: 50px auto;
+    padding: 10px 15px;
+    text-align: justify;
+    width: 60%;background: #00804496;
+    border-radius: 0px 16px 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(11, 206, 161, 0.4);
+}
+
+#inpts{
+    display: flex;
+    flex-direction: column;
+}
+
+#inpts input{
+
+}
+
+.order_tab{
+    position: relative;
+    top: -39px;
+    left: -16px;
+    /* font-size: small; */
+    /* list-style: none; */
+    background: #008044e6;
+    /* margin: 50px auto; */
+    /* padding: 10px 15px; */
+    text-align: justify;
+    /* width: 60%; */
+    background: #00804496;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(11, 206, 161, 0.4);
+    border-radius: 10px 10px 0px 0px;
+}
