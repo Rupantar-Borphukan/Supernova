@@ -7,17 +7,17 @@
 }
 
 body{
-    height: 200vh;
+    height: 300vh;
     
 }
 
  /* Hide scrollbar for Chrome, Safari and Opera */
- html::-webkit-scrollbar {
+ html::-webkit-scrollbar,.events-notif::-webkit-scrollbar {
     display: none;
   }
   
   /* Hide scrollbar for IE, Edge and Firefox */
-  html {
+  html,.events-notif {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   } 
@@ -34,10 +34,11 @@ header{
     height: 100vh;
     margin: 46px;
     margin-top: 65px;
+    margin-bottom: 0px;
 }
 
 .bg{
-    background: linear-gradient(to bottom,rgb(0, 28, 22),rgb(12, 12, 12));
+    background: linear-gradient(to bottom,rgb(0, 28, 22),#040404);
 }
 
 .intro-lf h1, .intro-lf h3{
@@ -103,3 +104,58 @@ footer {
 }
 
 /* footer */
+
+.events{
+    background: #040404;
+    padding-bottom: 40px;
+}
+
+.heading{
+    text-align: center;
+    font-size: 27px;
+}
+
+.events-notif{
+    /* From https://css.glass */
+    background: rgba(11, 206, 161, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(11, 206, 161, 0.4);
+    width: 55%;
+    margin: 80px auto;
+    height: 90vh;
+    overflow: scroll
+}
+
+.events-odd, .events-even{
+    list-style: none;
+    background: #008044e6;
+    margin: 50px auto;
+    padding: 10px 15px;
+    text-align: justify;
+    width: 86%;background: #00804496;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(11, 206, 161, 0.4);
+}
+
+.events-notif ul{
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+.events-button{
+    position: relative;
+top: -11px;
+right: 17px;
+border: 0px;
+background: #00ffff85;
+border-radius: 14px 0px 0px;
+color: #040404;
+padding: 2px 6px;
+}
+
