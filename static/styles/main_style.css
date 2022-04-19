@@ -1,8 +1,8 @@
 *{
     margin: 0px;
-    color: rgb(238, 238, 238);
+    color: rgb(219, 214, 214);
     /* border: solid 1px orange; */
-    font-family: ubuntu;
+    /* font-family: ubuntu; */
     scroll-behavior: smooth;
 }
 
@@ -32,8 +32,8 @@ header{
     display: flex;
     flex-direction: row;
     height: 100vh;
-    margin: 46px;
-    margin-top: 65px;
+    margin: 128px;
+    margin-top: 105px;
     margin-bottom: 0px;
 }
 
@@ -50,14 +50,14 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 134px 164px;
+    margin: 128px 176px;
 }
 
 .clipart-rt{
     width: 300px;
-    background: orange;
+    /* background: orange; */
     height: 300px;
-    margin: 33px auto;
+    margin: -30px -27px;
 }
 
 .supernova{
@@ -159,8 +159,11 @@ color: #040404;
 padding: 2px 6px;
 }
 
+<<<<<<< HEAD
 
 /*    navbar2  */
+=======
+>>>>>>> origin
 .nav ul{
     display: flex;
     position: absolute;
@@ -185,5 +188,17 @@ footer{
 }
 
 #logo{
+<<<<<<< HEAD
     height: 50px;
+=======
+    height: 143px;
+    position: absolute;
+    top: -38px;
+}
+
+#navs{
+    margin-left: 222px;
+    position: relative;
+    right: -488px;
+>>>>>>> origin
 }
