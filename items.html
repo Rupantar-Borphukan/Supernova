@@ -85,19 +85,38 @@
           </nav>
       </header>
       <main>
-          <div class="heading"><h1>Meal</h1></div>
-        <div class="food-info">
-            <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
-            <h4>Order Food</h4>
+        <div class="found-recently">
+          <div class="buletin">
+            <ul class="glass-box">
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="./static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <!-- <li class="found-items"><button class="found-info"></button></li>
+              <li class="found-items"><button class="found-info"></button></li> -->
+            </ul>
+          </div>
+        </div>
+          <div class="heading"><h1>Lost</h1></div>
+        <div class="food-info Lost-form">
+          <button class="order_tab items-tab" id="lost" onclick="lost()">Lost</button><button id="found" class="order_tab items-tab" onclick="found()">Found</button>
+            <div id="heads"><h2>Lost your wallet?</h2>
+            <h5>Don't mind, we got u covered</h5>
+            </div>
 
-            <form id="inpts" action="/meal.html" method="post">
+            <form id="inpts" class="lost-form" action="/meal.html" method="post">
                 <input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
-                <button class="order">Place Order</button>
+                <input type="text" placeholder="Your Item" required>
+                <input type="text" placeholder="Place" required>
+                <input type="text" id="desc" placeholder="Description" required>
+                <button class="order">Report Now</button>
+                <!-- <h6>Upload a picture..</h6>
+                <input type="file" id="file" placeholder="A picture of the item"> -->
             </form>
-            <div class="img"><img id="meal-img" src="./static/img/meal-image.png" alt=""></div>
+            <div class="img"><img class="lost-img" id="meal-img" src="./static/img/lost-image.png" alt=""></div>
         <!-- </div>
         <div class="w3-bar w3-black">
             <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
@@ -141,36 +160,51 @@
   document.getElementById(cityName).style.display = "block";
 }
 
-function track_order(){
+function found(){
   var inpt = document.getElementById('inpts')
-  var btn_track = document.getElementById('track')
-  var btn_place = document.getElementById('place')
+  var hs = document.getElementById('heads')
+  var imgs = document.getElementById('meal-img')
+  var btn_track = document.getElementById('found')
+  var btn_place = document.getElementById('lost')
   btn_track.style.background = '#00804496'
   btn_place.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
-  inpt.style.height = '281px'
-  inpt.style.margin = '131px 0px'
+  imgs.style.top = '220px'
+  // inpt.style.margin = '131px 0px'
   // height: 281px;
   //   margin: 131px 0px;
-  inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
-                <button class="order">Track Order</button>`
-}
-function place_order(){
+  hs.innerHTML = `<h2>Found a key?</h2>
+            <h5>Don't mind, u can report it here.</h5>`
+  inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
+  <input type="number" placeholder="Your Scholar-Id" required>
+  <input type="text" placeholder="Your Item" required>
+  <input type="text" placeholder="Place" required>
+  <input type="number" placeholder="Expected Reward (in ₹)" >
+  <input type="text" id="desc" placeholder="Description" required>
+  <button class="order">Report Now</button>`
+  }
+
+
+function lost(){
   var inpt = document.getElementById('inpts')
-  var btn_track = document.getElementById('track')
-  var btn_place = document.getElementById('place')
+  var hs = document.getElementById('heads')
+  var imgs = document.getElementById('meal-img')
+  var btn_track = document.getElementById('found')
+  var btn_place = document.getElementById('lost')
   btn_place.style.background = '#00804496'
   btn_track.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
-  inpt.style.height = 'unset'
-  inpt.style.margin = '0px'
+  imgs.style.top = '225px'
   // height: 281px;
   //   margin: 131px 0px;
+  hs.innerHTML = `<h2>Lost your wallet?</h2>
+            <h5>Don't mind, we got u covered</h5>`
   inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
-                <button class="order">Place Order</button>`
+                <input type="text" placeholder="Your Item" required>
+                <input type="number" placeholder="Reward (in ₹)" >
+                <input type="text" id="desc" placeholder="Description" required>
+                <button class="order">Report Now</button>`
 }
     </script>
   </body>
