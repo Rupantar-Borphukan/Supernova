@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperNova</title>
-    <link rel="stylesheet" href="./static/styles/main_style.css" />
+    <link rel="stylesheet" href="../static/styles/main_style.css" />
     <!-- <link rel="stylesheet" href="./static/styles/meal_style.css"> -->
     <!-- CSS only -->
     <link
@@ -40,7 +40,7 @@
 
         <nav class="navbar navbar-expand-lg " style="padding-top: 15px;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/"><img src="./static/img/LOGO.png" alt="logo" id="logo"></a>
+              <a class="navbar-brand" href="/"><img src="../static/img/LOGO.png" alt="logo" id="logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -50,16 +50,16 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="meal.html">Your Meal</a>
+                    <a class="nav-link" href="/meal">Your Meal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="items.html">Personal Items</a>
+                    <a class="nav-link" href="/items">Personal Items</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="cleanliness.html">Cleanliness</a>
+                    <a class="nav-link" href="/clean">Cleanliness</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
+                    <a class="nav-link" href="/about">About Us</a>
                   </li>
                   <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,22 +85,42 @@
           </nav>
       </header>
       <main>
-          <div class="heading"><h1>Report </h1></div>
+        <div class="found-recently">
+          <div class="heading">
+            <h1>Some Reported found items</h1>
+          </div>
+          <div class="buletin">
+            <ul class="glass-box">
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <!-- <li class="found-items"><button class="found-info"></button></li>
+              <li class="found-items"><button class="found-info"></button></li> -->
+            </ul>
+          </div>
+        </div>
+          <!-- <div class="heading"><h1>Lost</h1></div> -->
+        <div class="parallax"></div>
         <div class="food-info Lost-form">
-            <h2>Worried about garbage at your door?</h2>
-            <h5>Don't mind, we handle that too</h5>
+          <button class="order_tab items-tab" id="lost" onclick="lost()">Lost</button><button id="found" class="order_tab items-tab" onclick="found()">Found</button>
+            <div id="heads"><h2>Lost your wallet?</h2>
+            <h5>Don't mind, we got u covered</h5>
+            </div>
 
-            <form id="inpts" class="lost-form" action="/meal.html" method="post">
+            <form id="inpts" class="lost-form" action="/items" method="post">
                 <input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
+                <input type="text" placeholder="Your Item" required>
                 <input type="text" placeholder="Place" required>
-                <input type="text" id="desc" placeholder="Description" >
-                <!-- <input type="text" id="desc" placeholder="Description" required> -->
-                <h6>Upload a picture..</h6>
-                <input type="file" id="file" placeholder="A picture of the item">
+                <input type="text" id="desc" placeholder="Description" required>
                 <button class="order">Report Now</button>
+                <!-- <h6>Upload a picture..</h6>
+                <input type="file" id="file" placeholder="A picture of the item"> -->
             </form>
-            <div class="img"><img id="meal-img" class="cleaning-image" src="./static/img/cleaning-image.png" alt=""></div>
+            <div class="img"><img class="lost-img" id="meal-img" src="../static/img/lost-image.png" alt=""></div>
         <!-- </div>
         <div class="w3-bar w3-black">
             <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
@@ -124,13 +144,14 @@
         </main>
     <!-- <footer> -->
       <!-- footer -->
-      <footer class="footer">
+      <footer class="footer" id="footer">
+        <!-- <img src="./static/img/LOGO.png" class="footer-logo" alt=""> -->
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-linkedin"></a>
         <a href="#" class="fa fa-instagram"></a>
         <div class="copyright">
-          <footer>©SuperNova 2022</footer>
+          Copyright ©SuperNova 2022. All rights reserved
         </div>
       </footer>
     <!-- </footer> -->
@@ -144,36 +165,51 @@
   document.getElementById(cityName).style.display = "block";
 }
 
-function track_order(){
+function found(){
   var inpt = document.getElementById('inpts')
-  var btn_track = document.getElementById('track')
-  var btn_place = document.getElementById('place')
+  var hs = document.getElementById('heads')
+  var imgs = document.getElementById('meal-img')
+  var btn_track = document.getElementById('found')
+  var btn_place = document.getElementById('lost')
   btn_track.style.background = '#00804496'
   btn_place.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
-  inpt.style.height = '281px'
-  inpt.style.margin = '131px 0px'
+  imgs.style.top = '220px'
+  // inpt.style.margin = '131px 0px'
   // height: 281px;
   //   margin: 131px 0px;
-  inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
-                <button class="order">Track Order</button>`
-}
-function place_order(){
+  hs.innerHTML = `<h2>Found a key?</h2>
+            <h5>Don't mind, u can report it here.</h5>`
+  inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
+  <input type="number" placeholder="Your Scholar-Id" required>
+  <input type="text" placeholder="Your Item" required>
+  <input type="text" placeholder="Place" required>
+  <input type="number" placeholder="Expected Reward (in ₹)" >
+  <input type="text" id="desc" placeholder="Description" required>
+  <button class="order">Report Now</button>`
+  }
+
+
+function lost(){
   var inpt = document.getElementById('inpts')
-  var btn_track = document.getElementById('track')
-  var btn_place = document.getElementById('place')
+  var hs = document.getElementById('heads')
+  var imgs = document.getElementById('meal-img')
+  var btn_track = document.getElementById('found')
+  var btn_place = document.getElementById('lost')
   btn_place.style.background = '#00804496'
   btn_track.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
-  inpt.style.height = 'unset'
-  inpt.style.margin = '0px'
+  imgs.style.top = '225px'
   // height: 281px;
   //   margin: 131px 0px;
+  hs.innerHTML = `<h2>Lost your wallet?</h2>
+            <h5>Don't mind, we got u covered</h5>`
   inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
-                <button class="order">Place Order</button>`
+                <input type="text" placeholder="Your Item" required>
+                <input type="number" placeholder="Reward (in ₹)" >
+                <input type="text" id="desc" placeholder="Description" required>
+                <button class="order">Report Now</button>`
 }
     </script>
   </body>

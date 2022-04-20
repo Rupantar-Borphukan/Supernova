@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperNova</title>
-    <link rel="stylesheet" href="./static/styles/main_style.css" />
+    <link rel="stylesheet" href="../static/styles/main_style.css" />
     <!-- <link rel="stylesheet" href="./static/styles/meal_style.css"> -->
     <!-- CSS only -->
     <link
@@ -40,7 +40,7 @@
 
         <nav class="navbar navbar-expand-lg " style="padding-top: 15px;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/"><img src="./static/img/LOGO.png" alt="logo" id="logo"></a>
+              <a class="navbar-brand" href="/"><img src="../static/img/LOGO.png" alt="logo" id="logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -50,16 +50,16 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="meal.html">Your Meal</a>
+                    <a class="nav-link" href="/meal">Your Meal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="items.html">Personal Items</a>
+                    <a class="nav-link" href="/items">Personal Items</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="cleanliness.html">Cleanliness</a>
+                    <a class="nav-link" href="/clean">Cleanliness</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
+                    <a class="nav-link" href="/about">About Us</a>
                   </li>
                   <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,19 +85,41 @@
           </nav>
       </header>
       <main>
-          <div class="heading"><h1>Meal</h1></div>
-        <div class="food-info">
-            <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
-            <h4>Order Food</h4>
+        <div class="found-recently">
+          <div class="heading">
+            <h1>Some Reported cleanliness issues</h1>
+          </div>
+          <div class="buletin">
+            <ul class="glass-box">
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <li class="found-items"><img class="clean-pic" src="../static/img/clean-1.jpg" alt=""><div class="item-info clean-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
+              <!-- <li class="found-items"><button class="found-info"></button></li>
+              <li class="found-items"><button class="found-info"></button></li> -->
+            </ul>
+          </div>
+        </div>
+          <!-- <div class="heading"><h1>Lost</h1></div> -->
+        <div class="parallax"></div>
+          <div class="heading"><h1>Report </h1></div>
+        <div class="food-info Lost-form">
+            <h2>Worried about garbage at your door?</h2>
+            <h5>Don't mind, we handle that too</h5>
 
-            <form id="inpts" action="/meal.html" method="post">
+            <form id="inpts" class="lost-form" action="/meal" method="post">
                 <input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
-                <button class="order">Place Order</button>
+                <input type="text" placeholder="Place" required>
+                <input type="text" id="desc" placeholder="Description" >
+                <!-- <input type="text" id="desc" placeholder="Description" required> -->
+                <h6>Upload a picture..</h6>
+                <input type="file" id="file" placeholder="A picture of the item">
+                <button class="order">Report Now</button>
             </form>
-            <div class="img"><img id="meal-img" src="./static/img/meal-image.png" alt=""></div>
+            <div class="img"><img id="meal-img" class="cleaning-image" src="../static/img/cleaning-image.png" alt=""></div>
         <!-- </div>
         <div class="w3-bar w3-black">
             <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
@@ -121,13 +143,14 @@
         </main>
     <!-- <footer> -->
       <!-- footer -->
-      <footer class="footer">
+      <footer class="footer" id="footer">
+        <!-- <img src="./static/img/LOGO.png" class="footer-logo" alt=""> -->
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-linkedin"></a>
         <a href="#" class="fa fa-instagram"></a>
         <div class="copyright">
-          <footer>©SuperNova 2022</footer>
+          Copyright ©SuperNova 2022. All rights reserved
         </div>
       </footer>
     <!-- </footer> -->

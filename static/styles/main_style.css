@@ -82,6 +82,7 @@ header{
 /* Footer */
 footer {
     padding-top: 0 !important;
+    padding-bottom: 20px;
 }
 
 .footer {
@@ -379,13 +380,39 @@ h6{
     top: -179px;
 }
 
-.found-pic{
+.found-pic, .clean-pic{
     width: 100%;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: relative;
 }
+
+.parallax{
+    background-image: url('../img/LOGO.png');
+    width: 100%;
+    /* background: url(/static/img/background1.jpg) no-repeat center; */
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 300px;
+    background-position: -83px -458px;
+    opacity: 0.15;
+    margin: 200px 0px;
+}
+
+.clean-info{
+    top:-187px
+}
+
+.footer-logo{
+    position: relative;
+    /* bottom: -1008px; */
+    width: 262px;
+    left: 41px;
+}
+ .copyright{
+     color: whitesmoke;
+ }
 
     /*
     border-radius: 16px;
