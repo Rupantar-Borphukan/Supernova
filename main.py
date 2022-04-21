@@ -3,6 +3,9 @@ import json
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 import smtplib
+import random
+
+print(random.randint(111111,999999))
 
 # config file
 with open('config.json', 'rt') as f:
@@ -19,8 +22,8 @@ book = json.loads(books)["books"]
 print(book['1']['author'])
 
 app = Flask(__name__)
-app.secret_key = 'trinetra-geeks'
-
+app.secret_key = 'Im iron man'
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/codingthunder"
 
 # extensions
 @app.route("/", methods=['GET', 'POST'])
@@ -41,8 +44,18 @@ def items():
 def cleanliness():
     return render_template("cleanliness.html")
 
+@app.route("/meal/<string:form_no>",methods=['GET','POST'])
+def meal(form_no):
+    if form_no == '1':
+        order_code = 0
+        if (request.method == 'POST'):
+            order_code = random.randint(111111,999999)
+        return render_template("meal.html",order_code = order_code)
+        # return render_template("meal.html")
+
 @app.route("/meal")
-def meal():
+def meal_normal():
+    flash("hello, this is flash msg", "alert")
     return render_template("meal.html")
 
 @app.route("/about")

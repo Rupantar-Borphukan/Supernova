@@ -1,0 +1,11 @@
+.bg{
+    background: #f4f4f4;
+}
+
+footer,.navbar,nav, header{
+    background: #767676 !important;
+}
+
+*{
+    color: #242424;
+}

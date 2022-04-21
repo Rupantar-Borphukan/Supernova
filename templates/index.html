@@ -18,8 +18,19 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="../static/scripts/main_script.js"></script>
   </head>
   <body>
+    {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category,message in messages%}
+    <div class="flash_msg" id="flash_msg" onclick="flash_click()">
+        {{message}}
+        hello, this is error msg
+    </div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
     <div class="bg">
       <header>
         <!-- <div class="navbar">
@@ -49,7 +60,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/meal">Your Meal</a>
+                    <a class="nav-link" href="/meal/1">Your Meal</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/items">Personal Items</a>

@@ -5,59 +5,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
-    <link rel="stylesheet" href="../static/styles/about.css" />
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles/about.css">
+    <!-- CSS only -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  -->
+</head>
   <body>
-      <br>
-      <div class="head">
-          <h1>About Us</h1>
-      </div>
-      <br>
-    <div class="container">
-      <div class="card">
-        <div class="content">
-          <h2>T1</h2>
-          <h3>Rupantar Borphukan</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-            molestiae sit sunt. Beatae laborum, numquam mollitia recusandae esse
-            inventore, veritatis aperiam aliquid ratione.
-          </p>
-          <a href="##">Read More</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <h2>T2</h2>
-          <h3>Partha Pratim Deka</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-            molestiae sit sunt. Beatae laborum, numquam mollitia recusandae esse
-            inventore, veritatis aperiam aliquid ratione.
-          </p>
-          <a href="##">Read More</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <h2>T3</h2>
-          <h3>Suman Das</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-            piciatis aspernatur amet consectetur adipisic
-            inventore, veritatis aperiam aliquid ratione.
-          </p>
-          <a href="##">Read More</a>
-        </div>
-      </div>
+    {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category,message in messages%}
+    <div class="flash_msg" id="flash_msg" onclick="flash_click()">
+        {{message}}
+        hello, this is error msg
     </div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+      <section>
+          <div class="about">
+            <h1>About Us</h1>
+          </div>
+      </section>
+      <section>
+          <div class="container">
+              <div class="card">
+                  <div class="content">
+                      <div class="imgbx"><img src="../static/img/mem1.jpg"></div>
+                      <div class="contentbox">
+                          <h3>Rupantar Borphukan<br><span>Hi,I am Freshman at NITS, EIE.Currently,
+                              working as Frontend Developer in SuperNova & one of co-founder of SuperNova.
+                          </span></h3>
+                      </div>
+                  </div>
+                  <ul class="sci">
+                    <li style="--i:1">
+                        <a href="https://www.linkedin.com/in/rupantar-borphukan-25a87b227/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="--i:2">
+                      <a href="https://www.facebook.com/profile.php?id=100011346334783"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </li>
+                  <li style="--i:3">
+                      <a href="https://twitter.com/RupantarB"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                  </li>
+                  <li style="--i:4">
+                      <a href="https://www.instagram.com/rupantar_b12/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="content">
+                    <div class="imgbx"><img src="../static/img/mem2.jpg"></div>
+                    <div class="contentbox">
+                        <h3>Partha Pratim Deka<br><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum molestiae culpa</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                  <li style="--i:1">
+                      <a href="##"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li style="--i:2">
+                    <a href="##"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                </li>
+                <li style="--i:3">
+                    <a href="##"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                </li>
+                <li style="--i:4">
+                    <a href="##"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="imgbx"><img src="../static/img/mem3.jpg"></div>
+                    <div class="contentbox">
+                        <h3>Suman Das<br><span>Hey Viewers, I'm am undergrad at NITS,ECE.Working in the Design Team of SuperNova Product.</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href="##"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                  <li style="--i:2">
+                    <a href="##"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                </li>
+                <li style="--i:3">
+                    <a href="##"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                </li>
+                <li style="--i:4">
+                    <a href="##"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+      </section>
 
 
-    <script type="text/javascript" src="../static/scripts/vanilla-tilt.js"></script>
-    <script>
-        VanillaTilt.init(document.querySelectorAll(".card"),{
-		max: 25,
-		speed: 400, glare:true, "max-glare":0.5, });
-    </script>
+           <!-- footer -->
+      <!-- <footer class="footer">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <div class="copyright">
+          <footer>©SuperNova 2022<br>All Right Reserved</footer>
+        </div>
+      </footer> -->
+    <!-- </footer> -->
+      
   </body>
 </html>

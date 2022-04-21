@@ -12,15 +12,29 @@
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
-    />
-    <!-- JavaScript Bundle with Popper -->
-    <script
+      />
+      <!-- JavaScript Bundle with Popper -->
+      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
+    <div id="night">
+      <!-- <link rel="stylesheet" href="../static/styles/night.css"> -->
+    </div>
+    <script src="../static/scripts/main_script.js"></script>
   </head>
   <body>
+    {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category,message in messages%}
+    <div class="flash_msg" id="flash_msg" onclick="flash_click()">
+        {{message}}
+        hello, this is error msg
+    </div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
     <div class="bg">
       <header>
         <!-- <div class="navbar">
@@ -50,7 +64,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/meal">Your Meal</a>
+                    <a class="nav-link" href="/meal/1">Your Meal</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/items">Personal Items</a>
@@ -85,17 +99,24 @@
           </nav>
       </header>
       <main>
+
+
           <div class="heading"><h1>Meal</h1></div>
         <div class="food-info">
             <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
             <h4>Order Food</h4>
 
-            <form id="inpts" action="/meal" method="post">
-                <input type="text" placeholder="Your Name" required>
-                <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
+            <form id="inpts" action="/meal/1" method="post">
+              {% if order_code == 0 %}
+                <input type="text" placeholder="Name" required>
+                <input type="number" placeholder="Scholar-Id" required>
+                <input type="text" placeholder="Food" required>
+                <input type="number" placeholder="Phone Number" required>
+                <input type="text" placeholder="Note for the mess">
                 <button class="order">Place Order</button>
+              {% else %}
+                <h2 id="order_code">Your Order Code is: {{order_code}}</h2>
+              {% endif %}
             </form>
             <div class="img"><img id="meal-img" src="../static/img/meal-image.png" alt=""></div>
         <!-- </div>
