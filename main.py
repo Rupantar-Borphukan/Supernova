@@ -23,7 +23,7 @@ print(book['1']['author'])
 
 app = Flask(__name__)
 app.secret_key = 'Im iron man'
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/codingthunder"
+
 
 # extensions
 @app.route("/", methods=['GET', 'POST'])
@@ -49,9 +49,26 @@ def meal(form_no):
     if form_no == '1':
         order_code = 0
         if (request.method == 'POST'):
-            order_code = random.randint(111111,999999)
-        return render_template("meal.html",order_code = order_code)
-        # return render_template("meal.html")
+            conf_id = request.form.get('conf_code')
+            sc_id = request.form.get('sc_id')
+            if sc_id == '2112077' and conf_id == '567842':
+                order_code = random.randint(111111,999999)
+            else:
+                flash("Your scholar-id and confirmation code doesn't match required criteria.")
+        return render_template("meal.html",order_code = order_code, form_id = '1')
+    elif form_no == '2':
+        ispost = '0'
+        if (request.method == 'POST'):
+            ispost = '1'
+            order_id = request.form.get('order_id')
+            if order_id == '287665':
+                msg = 'Your order is ready.'
+            elif order_id == '387654':
+                msg = "We're sorry, your order is not ready till now."
+            else:
+                msg = 'Your order is not made till now.'
+            return render_template("meal.html",msg = msg, form_id = '2', ispost = '1')
+        return render_template("meal.html", form_id = '2', ispost = ispost)
 
 @app.route("/meal")
 def meal_normal():

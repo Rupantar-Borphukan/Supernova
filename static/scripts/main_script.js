@@ -1,6 +1,5 @@
 function flash_click(){
     flash = document.getElementById('flash_msg')
-    // flash.style.left = '-10000px'
     flash.style.display = 'none'
 }
 

@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperNova</title>
     <link rel="stylesheet" href="../static/styles/main_style.css" />
-    <!-- <link rel="stylesheet" href="./static/styles/meal_style.css"> -->
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -34,21 +31,7 @@
     {%endwith%}
     <div class="bg">
       <header>
-        <!-- <div class="navbar">
-          Navigation Bar
-          <div class="logo"></div>
-          <div class="nav">
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">Your Meal</a></li>
-              <li><a href="">Personal Items</a></li>
-              <li><a href="">Cleanliness</a></li>
-            </ul>
-          </div>
-        </div> -->
-
         <!-- Navigation Bar -->
-
         <nav class="navbar navbar-expand-lg " style="padding-top: 15px;">
             <div class="container-fluid">
               <a class="navbar-brand" href="/"><img src="../static/img/LOGO.png" alt="logo" id="logo"></a>
@@ -64,7 +47,7 @@
                     <a class="nav-link" href="/meal/1">Your Meal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/items">Personal Items</a>
+                    <a class="nav-link" href="/items">Lost/Found</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/clean">Cleanliness</a>
@@ -72,20 +55,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                   </li>
-                  <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li> -->
                 </ul>
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -97,8 +66,9 @@
       </header>
       <main>
         <div class="found-recently">
+          <!-- Items Lists we have found  -->
           <div class="heading">
-            <h1>Some Reported found items</h1>
+            <h1>Few Discovered Items</h1>
           </div>
           <div class="buletin">
             <ul class="glass-box">
@@ -108,12 +78,9 @@
               <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
               <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
               <li class="found-items"><img class="found-pic" src="../static/img/found-1.jpg" alt=""><div class="item-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, iusto nostrum! Et.</div></li>
-              <!-- <li class="found-items"><button class="found-info"></button></li>
-              <li class="found-items"><button class="found-info"></button></li> -->
             </ul>
           </div>
         </div>
-          <!-- <div class="heading"><h1>Lost</h1></div> -->
         <div class="parallax"></div>
         <div class="food-info Lost-form">
           <button class="order_tab items-tab" id="lost" onclick="lost()">Lost</button><button id="found" class="order_tab items-tab" onclick="found()">Found</button>
@@ -124,39 +91,23 @@
             <form id="inpts" class="lost-form" action="/items" method="post">
                 <input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
+                <input type="text" placeholder="Authentication Code" required>
+                <input type="number" placeholder="Phone Number" required>
                 <input type="text" placeholder="Your Item" required>
                 <input type="text" placeholder="Place" required>
                 <input type="text" id="desc" placeholder="Description" required>
                 <button class="order">Report Now</button>
-                <!-- <h6>Upload a picture..</h6>
-                <input type="file" id="file" placeholder="A picture of the item"> -->
             </form>
             <div class="img"><img class="lost-img" id="meal-img" src="../static/img/lost-image.png" alt=""></div>
-        <!-- </div>
-        <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-            <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-            <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-          </div>
-        <div id="London" class="city">
-            <h2>London</h2>
-            <p>London is the capital of England.</p>
-          </div>
-          
-          <div id="Paris" class="city" style="display:none">
-            <h2>Paris</h2>
-            <p>Paris is the capital of France.</p>
-          </div>
-          
-          <div id="Tokyo" class="city" style="display:none">
-            <h2>Tokyo</h2>
-            <p>Tokyo is the capital of Japan.</p>
-          </div> -->
         </main>
-    <!-- <footer> -->
       <!-- footer -->
       <footer class="footer" id="footer">
-        <!-- <img src="./static/img/LOGO.png" class="footer-logo" alt=""> -->
+        <div id="handles">
+          <a href="https://www.linkedin.com/in/rupantar-borphukan-25a87b227/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rupantar-borphukan" height="30" width="40" /></a>
+          <a href="https://www.facebook.com/profile.php?id=100011346334783" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Rupantar Borphukan" height="30" width="40" /></a>
+          <a href="https://www.instagram.com/rupantar_b12/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="rupantar_b12" height="30" width="40" /></a>
+          <a href="https://twitter.com/RupantarB" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="RupantarB" height="30" width="40" /></a>
+      </div>
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-linkedin"></a>
@@ -165,7 +116,7 @@
           Copyright ©SuperNova 2022. All rights reserved
         </div>
       </footer>
-    <!-- </footer> -->
+
     <script>
         function openCity(cityName) {
   var i;
@@ -186,13 +137,12 @@ function found(){
   btn_place.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
   imgs.style.top = '220px'
-  // inpt.style.margin = '131px 0px'
-  // height: 281px;
-  //   margin: 131px 0px;
   hs.innerHTML = `<h2>Found a key?</h2>
             <h5>Don't mind, u can report it here.</h5>`
   inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
   <input type="number" placeholder="Your Scholar-Id" required>
+  <input type="text" placeholder="Authentication Code" required>
+  <input type="number" placeholder="Phone Number" required>
   <input type="text" placeholder="Your Item" required>
   <input type="text" placeholder="Place" required>
   <input type="number" placeholder="Expected Reward (in ₹)" >
@@ -211,12 +161,12 @@ function lost(){
   btn_track.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
   imgs.style.top = '225px'
-  // height: 281px;
-  //   margin: 131px 0px;
   hs.innerHTML = `<h2>Lost your wallet?</h2>
             <h5>Don't mind, we got u covered</h5>`
   inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
                 <input type="number" placeholder="Your Scholar-Id" required>
+                <input type="text" placeholder="Authentication Code" required>
+                <input type="number" placeholder="Phone Number" required>
                 <input type="text" placeholder="Your Item" required>
                 <input type="number" placeholder="Reward (in ₹)" >
                 <input type="text" id="desc" placeholder="Description" required>

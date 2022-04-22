@@ -614,6 +614,10 @@ body {
     transform: scale(1);
   }
 
+#handles{
+    padding-top: 20px;
+}
+
 
     /*
     border-radius: 16px;

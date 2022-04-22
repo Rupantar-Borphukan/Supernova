@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperNova</title>
     <link rel="stylesheet" href="../static/styles/main_style.css" />
-    <!-- <link rel="stylesheet" href="./static/styles/meal_style.css"> -->
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
       />
-      <!-- JavaScript Bundle with Popper -->
       <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous">
     </script>
     <div id="night">
-      <!-- <link rel="stylesheet" href="../static/styles/night.css"> -->
     </div>
     <script src="../static/scripts/main_script.js"></script>
   </head>
@@ -37,20 +33,6 @@
     {%endwith%}
     <div class="bg">
       <header>
-        <!-- <div class="navbar">
-          Navigation Bar
-          <div class="logo"></div>
-          <div class="nav">
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">Your Meal</a></li>
-              <li><a href="">Personal Items</a></li>
-              <li><a href="">Cleanliness</a></li>
-            </ul>
-          </div>
-        </div> -->
-
-        <!-- Navigation Bar -->
 
         <nav class="navbar navbar-expand-lg " style="padding-top: 15px;">
             <div class="container-fluid">
@@ -67,7 +49,7 @@
                     <a class="nav-link" href="/meal/1">Your Meal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/items">Personal Items</a>
+                    <a class="nav-link" href="/items">Lost/Found</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/clean">Cleanliness</a>
@@ -75,20 +57,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                   </li>
-                  <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li> -->
                 </ul>
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -101,15 +69,38 @@
       <main>
 
 
-          <div class="heading"><h1>Meal</h1></div>
+          <div class="heading"><h1>Order your canteen meal</h1></div>
         <div class="food-info">
             <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
-            <h4>Order Food</h4>
-
+            <h4 id="order_track_food">Order Food</h4>
+            {% if form_id == '2' %}
+            {% if ispost == '1'%}
+            <style>
+              #order_code{
+                width: 45%;
+              }
+            </style>
+            <form action="" method="post">
+              <h2 id="order_code">{{msg}}</h2>
+            </form>
+            {% else %}
+            <style>
+              #inpts{
+                height:281px;
+                margin: 131px 0px;
+              }
+            </style>
+            <form id="inpts" action="/meal/2" method="post">
+            <input type="text" name="order_id" placeholder="Your Order-Id" required>
+                <button class="order">Track Order</button>
+                </form>
+                {%endif%}
+            {% else %}
             <form id="inpts" action="/meal/1" method="post">
               {% if order_code == 0 %}
                 <input type="text" placeholder="Name" required>
-                <input type="number" placeholder="Scholar-Id" required>
+                <input type="number" name="sc_id" placeholder="Scholar-Id" required>
+                <input type="text" name="conf_code" placeholder="Authentication Code" required>
                 <input type="text" placeholder="Food" required>
                 <input type="number" placeholder="Phone Number" required>
                 <input type="text" placeholder="Note for the mess">
@@ -118,32 +109,17 @@
                 <h2 id="order_code">Your Order Code is: {{order_code}}</h2>
               {% endif %}
             </form>
+            {%endif%}
             <div class="img"><img id="meal-img" src="../static/img/meal-image.png" alt=""></div>
-        <!-- </div>
-        <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-            <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-            <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-          </div>
-        <div id="London" class="city">
-            <h2>London</h2>
-            <p>London is the capital of England.</p>
-          </div>
-          
-          <div id="Paris" class="city" style="display:none">
-            <h2>Paris</h2>
-            <p>Paris is the capital of France.</p>
-          </div>
-          
-          <div id="Tokyo" class="city" style="display:none">
-            <h2>Tokyo</h2>
-            <p>Tokyo is the capital of Japan.</p>
-          </div> -->
         </main>
-    <!-- <footer> -->
       <!-- footer -->
       <footer class="footer" id="footer">
-        <!-- <img src="./static/img/LOGO.png" class="footer-logo" alt=""> -->
+        <div id="handles">
+          <a href="https://www.linkedin.com/in/rupantar-borphukan-25a87b227/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rupantar-borphukan" height="30" width="40" /></a>
+          <a href="https://www.facebook.com/profile.php?id=100011346334783" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Rupantar Borphukan" height="30" width="40" /></a>
+          <a href="https://www.instagram.com/rupantar_b12/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="rupantar_b12" height="30" width="40" /></a>
+          <a href="https://twitter.com/RupantarB" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="RupantarB" height="30" width="40" /></a>
+      </div>
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-linkedin"></a>
@@ -152,7 +128,6 @@
           Copyright ©SuperNova 2022. All rights reserved
         </div>
       </footer>
-    <!-- </footer> -->
     <script>
         function openCity(cityName) {
   var i;
@@ -172,8 +147,7 @@ function track_order(){
   console.log(inpt);
   inpt.style.height = '281px'
   inpt.style.margin = '131px 0px'
-  // height: 281px;
-  //   margin: 131px 0px;
+  document.getElementById('order_track_food').innerHTML = 'Track Food'
   inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
                 <button class="order">Track Order</button>`
 }
@@ -182,16 +156,17 @@ function place_order(){
   var btn_track = document.getElementById('track')
   var btn_place = document.getElementById('place')
   btn_place.style.background = '#00804496'
+  document.getElementById('order_track_food').innerHTML = 'Order Food'
   btn_track.style.background = 'rgba(11, 206, 161, 0.08)'
   console.log(inpt);
   inpt.style.height = 'unset'
   inpt.style.margin = '0px'
-  // height: 281px;
-  //   margin: 131px 0px;
-  inpt.innerHTML = `<input type="text" placeholder="Your Name" required>
-                <input type="number" placeholder="Your Scholar-Id" required>
-                <input type="text" placeholder="Your Food" required>
-                <input type="text" placeholder="Your note for the mess">
+  inpt.innerHTML = `<input type="text" placeholder="Name" required>
+                <input type="number" placeholder="Scholar-Id" required>
+                <input type="text" placeholder="Authentication Code" required>
+                <input type="text" placeholder="Food" required>
+                <input type="number" placeholder="Phone Number" required>
+                <input type="text" placeholder="Note for the mess">
                 <button class="order">Place Order</button>`
 }
     </script>

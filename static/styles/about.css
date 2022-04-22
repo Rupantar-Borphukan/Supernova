@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ubuntu','Poppins', sans-serif;
+    color: aliceblue;
 }
 body{
     display: flex;
@@ -40,7 +39,7 @@ section::after{
     align-items: center;
     flex-wrap: wrap;
     z-index: 1;
-    margin: 40px 0;
+    /* margin: 121px auto; */
 }
 .container .card{
     position: relative;
@@ -94,7 +93,7 @@ section::after{
     font-weight: 500;
     font-size: 18px;
     text-align: center;
-    margin: 20px 0 10px;
+    margin: 20px 20px 10px;
     line-height: 1.1em;
 }
 .container .card .content .contentbox h3 span{
@@ -122,6 +121,10 @@ section::after{
 .container .card .sci li a{
     color: #fff;
     font-size: 24px;
+}
+
+.main{
+    margin: 121px auto;
 }
 
 
