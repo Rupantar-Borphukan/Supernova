@@ -26,7 +26,6 @@
     {%for category,message in messages%}
     <div class="flash_msg" id="flash_msg" onclick="flash_click()">
         {{message}}
-        hello, this is error msg
     </div>
     {%endfor%}
     {%endif%}
@@ -74,6 +73,7 @@
             <button class="order_tab" id="place" onclick="place_order()">Place</button><button id="track" class="order_tab" onclick="track_order()">Track</button>
             <h4 id="order_track_food">Order Food</h4>
             {% if form_id == '2' %}
+            <div id="inpts_enclo">
             {% if ispost == '1'%}
             <style>
               #order_code{
@@ -95,9 +95,11 @@
                 <button class="order">Track Order</button>
                 </form>
                 {%endif%}
+                </div>
             {% else %}
-            <form id="inpts" action="/meal/1" method="post">
-              {% if order_code == 0 %}
+            <div id="inpts_enclo">
+              <form id="inpts" action="/meal/1" method="post">
+            {% if order_code == 0 %}
                 <input type="text" placeholder="Name" required>
                 <input type="number" name="sc_id" placeholder="Scholar-Id" required>
                 <input type="text" name="conf_code" placeholder="Authentication Code" required>
@@ -109,7 +111,8 @@
                 <h2 id="order_code">Your Order Code is: {{order_code}}</h2>
               {% endif %}
             </form>
-            {%endif%}
+          </div>  
+          {%endif%}
             <div class="img"><img id="meal-img" src="../static/img/meal-image.png" alt=""></div>
         </main>
       <!-- footer -->
@@ -139,7 +142,7 @@
 }
 
 function track_order(){
-  var inpt = document.getElementById('inpts')
+  var inpt = document.getElementById('inpts_enclo')
   var btn_track = document.getElementById('track')
   var btn_place = document.getElementById('place')
   btn_track.style.background = '#00804496'
@@ -148,11 +151,32 @@ function track_order(){
   inpt.style.height = '281px'
   inpt.style.margin = '131px 0px'
   document.getElementById('order_track_food').innerHTML = 'Track Food'
-  inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
-                <button class="order">Track Order</button>`
+  inpt.innerHTML = `{% if ispost == '1'%}
+            <style>
+              #order_code{
+                width: 45%;
+              }
+            </style>
+            <form action="" method="post">
+              <h2 id="order_code">{{msg}}</h2>
+            </form>
+            {% else %}
+            <style>
+              #inpts{
+                height:281px;
+                margin: 131px 0px;
+              }
+            </style>
+            <form id="inpts" action="/meal/2" method="post">
+            <input type="text" name="order_id" placeholder="Your Order-Id" required>
+                <button class="order">Track Order</button>
+                </form>
+                {%endif%}`
+  // inpt.innerHTML = `<input type="text" placeholder="Your Order-Id" required>
+  //               <button class="order">Track Order</button>`
 }
 function place_order(){
-  var inpt = document.getElementById('inpts')
+  var inpt = document.getElementById('inpts_enclo')
   var btn_track = document.getElementById('track')
   var btn_place = document.getElementById('place')
   btn_place.style.background = '#00804496'
@@ -161,13 +185,19 @@ function place_order(){
   console.log(inpt);
   inpt.style.height = 'unset'
   inpt.style.margin = '0px'
-  inpt.innerHTML = `<input type="text" placeholder="Name" required>
-                <input type="number" placeholder="Scholar-Id" required>
-                <input type="text" placeholder="Authentication Code" required>
+  inpt.innerHTML = `<form id="inpts" action="/meal/1" method="post">
+            {% if order_code == 0 %}
+                <input type="text" placeholder="Name" required>
+                <input type="number" name="sc_id" placeholder="Scholar-Id" required>
+                <input type="text" name="conf_code" placeholder="Authentication Code" required>
                 <input type="text" placeholder="Food" required>
                 <input type="number" placeholder="Phone Number" required>
                 <input type="text" placeholder="Note for the mess">
-                <button class="order">Place Order</button>`
+                <button class="order">Place Order</button>
+              {% else %}
+                <h2 id="order_code">Your Order Code is: {{order_code}}</h2>
+              {% endif %}
+            </form>`
 }
     </script>
   </body>
